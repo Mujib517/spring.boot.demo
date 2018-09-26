@@ -6,14 +6,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductService {
+    List<Product> products;
 
-    public Iterable<Product> Get() {
-        List<Product> products = new ArrayList<>();
+    public ProductService() {
+        products = new ArrayList<>();
 
         products.add(new Product("Nokia", "1100", 200, true));
         products.add(new Product("Nokia", "2100", 300, true));
         products.add(new Product("Samsung", "1100", 300, false));
+    }
 
+    public Iterable<Product> Get() {
         return products;
+    }
+
+    public void save(Product product) {
+        products.add(product);
     }
 }
