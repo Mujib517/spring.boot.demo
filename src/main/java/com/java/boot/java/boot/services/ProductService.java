@@ -1,11 +1,12 @@
 package com.java.boot.java.boot.services;
 
 import com.java.boot.java.boot.models.Product;
+import com.java.boot.java.boot.services.interfaces.IProductService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductService {
+public class ProductService implements IProductService {
     List<Product> products;
 
     public ProductService() {

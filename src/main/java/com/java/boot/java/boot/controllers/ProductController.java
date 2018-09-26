@@ -2,6 +2,7 @@ package com.java.boot.java.boot.controllers;
 
 import com.java.boot.java.boot.models.Product;
 import com.java.boot.java.boot.services.ProductService;
+import com.java.boot.java.boot.services.interfaces.IProductService;
 import com.sun.net.httpserver.Authenticator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/products")
 public class ProductController {
 
+    IProductService svc;
+
+    public ProductController(IProductService svc) {
+        this.svc = svc;
+    }
+
     @RequestMapping("")
     public ResponseEntity Get() {
-        ProductService svc = new ProductService();
         Iterable<Product> products = svc.Get();
 
         return ResponseEntity.ok().body(products);
