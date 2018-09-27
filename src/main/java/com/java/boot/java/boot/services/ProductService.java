@@ -2,10 +2,12 @@ package com.java.boot.java.boot.services;
 
 import com.java.boot.java.boot.models.Product;
 import com.java.boot.java.boot.services.interfaces.IProductService;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class ProductService implements IProductService {
     List<Product> products;
 
